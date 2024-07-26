@@ -16,6 +16,18 @@ type UserByIdResponse struct {
 	DisplayName            string `json:"displayName"`
 }
 
+type UserByUsernameResponse struct {
+	RequestedUsername string `json:"requestedUsername"`
+	HasVerifiedBadge  bool   `json:"hasVerifiedBadge"`
+	ID                int64  `json:"id"`
+	Name              string `json:"name"`
+	DisplayName       string `json:"displayName"`
+}
+
+type UserByUsernameResponseData struct {
+	Data []UserByUsernameResponse `json:"data"`
+}
+
 type UserAuthenticatedResponse struct {
 	ID          int    `json:"id"`
 	Name        string `json:"name"`

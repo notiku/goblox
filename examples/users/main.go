@@ -31,4 +31,21 @@ func main() {
 		user.Name,
 		user.DisplayName,
 	)
+
+	var username string = "ikucoder"
+
+	user2, err := client.Users.GetByUsernames(username, true)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Printf(
+		"Requested Username: %s\nHas Verified Badge: %t\nID: %d\nName: %s\nDisplay Name: %s\n",
+		user2.RequestedUsername,
+		user2.HasVerifiedBadge,
+		user2.ID,
+		user2.Name,
+		user2.DisplayName,
+	)
 }
